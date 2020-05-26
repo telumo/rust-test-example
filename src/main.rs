@@ -31,7 +31,7 @@ fn add_numbers(v: Vec<usize>) -> usize {
 // 4. 同じファイルに合計を書き込む
 fn write_numbers(n: usize, p: &str) -> TResult<()> {
     let path = Path::new(p);
-    let res = read_to_string(&path.display().to_string())?;
+    let res = read_file(&path.display().to_string())?;
 
     write(path, format!("{}\n{}", res, n))?;
 
